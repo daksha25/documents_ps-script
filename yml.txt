@@ -1,0 +1,56 @@
+- name: python2
+  hosts: webservers
+  gather_facts: no
+  pre_tasks:
+    - unarchive: src=plugin.zip  dest=/home/daksha/foo
+
+--name: python2
+--hosts: webservers
+  remote_user: root
+  tasks:
+       raw: apt-get -y install python-simplejson 
+
+
+
+---
+- hosts: all
+  tasks:
+       - unarchive: src=plugin.zip  dest=/home/daksha/foo
+
+- name: python2
+  hosts: webservers
+  tasks:
+  raw: yum -y install python-simplejson
+
+ tasks:
+  - name: install python 2
+    raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+
+
+
+
+---
+- hosts: all
+  tasks:
+    - name: Installs python
+      raw: yum -y install python-simplejson
+install pip -
+sudo pip --proxy=http://Scloudsetadmin:C111111%23@proxy.cognizant.com:6050 install pywinrm 
+
+http://abregman.com/2015/12/25/ansible-write-and-run-your-first-playbook/ 
+
+https://www.visualstudio.com/en-us/docs/tfvc/checkout-or-edit-command 
+
+http://docs.ansible.com/ansible/list_of_files_modules.html 
+
+https://thornelabs.net/2014/04/19/ansible-manage-the-same-users-across-servers-with-different-passwords.html 
+
+http://v-punk.com/automate-password-changes-with-ansible/ 
+
+
+
+sudo --proxy=http://Scloudsetadmin:C111111%23@proxy.cognizant.com:6050 apt-get install --reinstall python2.7
+sudo apt-get purge python-pip
+wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py
+sudo python get-pip.py
+sudo pip install  

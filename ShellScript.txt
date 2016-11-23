@@ -1,0 +1,85 @@
+1) Replace the word in file -
+
+sed -i 's/test/Cognizant/g' /home/training/daksha/sample/test 
+
+in all files under folder -
+sed -i -- 's/Cognizant/cts/g' training/daksha/sample/*
+sed -i -- 's/Cognizant/cts/g' *  --> if u r in current folder
+
+
+2)remove extra blank spaces in all line of file
+
+but cant make changes in same file but with single file
+ column -t training/daksha/sample/test2.txt > training/daksha/sample/result.txt
+
+ sed -i 's/ \{1,\}/ /g' training/daksha/sample/test2.txt
+ sed -i 's/ \{1,\}/ /g' training/daksha/sample/*.txt
+
+
+
+sed 's/ \{1,\}/ /g' Test.txt 
+
+3)print 10th line
+sed -n "10p" training/daksha/sample/*
+print all 10 line 
+head -n "10" training/daksha/sample/*
+
+4) last string in line
+working with single file only -
+
+ while read line; 
+do [ -z "$line" ] && continue;
+echo ${line##* }; 
+done < training/daksha/sample/test2.txt
+
+ sed 's/.* //' training/daksha/sample/*.txt
+
+5)last string of nth line in file
+
+sed -n "10p" training/daksha/sample/* | awk '{print$NF}'
+
+6)upper to lower case
+perl -i -ne 'print uc()' file_name
+tr '[a-z]' '[A-Z]' < $FILE1 >file2
+ perl -p -i -e 'tr/A-Z/a-z/' test1.txt    
+perl -p -i -e 'tr/a-z/A-Z/' *.txt
+
+
+-p: Places a printing loop around your command so that it acts on each
+    line of standard input. Used mostly so Perl can beat the
+
+
+
+    pants off awk in terms of power AND simplicity :-)
+-e: Allows you to provide the program as an argument rather
+    than in a file. You don't want to have to create a script
+    file for every little Perl one-liner.
+-i: Modifies your input file in-place (making a backup of the
+    original). Handy to modify files without the {copy,
+    delete-original, rename} process.
+-w: Activates some warnings. Any good Perl coder will use this.
+-d: Runs under the Perl debugger. For debugging your Perl code,
+    obviously.
+-t: Treats certain "tainted" (dubious) code as warnings (proper
+    taint mode will error on this dubious code). Used to beef
+    up Perl security, especially when running code for other
+    users, such as setuid scripts or web stuff.
+
+7) 
+
+
+awk '{for (I=1;I<=NF;I++) if ($I == ":") {print $(I+1)};}' *.txt
+
+
+adduser  su
+sudo
+
+8) sh script.sh to run the script
+
+
+
+9) remove directory - rm -rf .ssh/
+
+
+usx7b002w0mBw
+

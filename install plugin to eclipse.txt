@@ -1,0 +1,12 @@
+http://stackoverflow.com/questions/11633529/installing-plugin-into-eclipse-using-command-line
+
+http://dl.bintray.com/nodeclipse/nodeclipse/0.9.05/features/
+
+eclipsec.exe -nosplash -application org.eclipse.equinox.p2.director -destination D:\Softwares\eclipse\eclips_projects -repository http://dl.bintray.com/nodeclipse/nodeclipse/0.9.05 -installIU org.nodeclipse.feature.group,org.nodeclipse.bundle.express.feature.feature.group,org.nodeclipse.bundle.coffee.feature.feature.group,org.chromium.debug.feature.group
+
+eclipsec.exe
+   -application org.eclipse.equinox.p2.director
+   -repository http://download.eclipse.org/releases/galileo/
+   -installIU org.eclipse.cdt.feature.group
+   -destination d:/eclipse/
+   -profile SDKProfile
